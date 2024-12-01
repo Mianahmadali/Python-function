@@ -1,14 +1,13 @@
-#Write a function to find the factorial of a number using recursion.
-def cal_factorial(num):
-    if num < 0:
-     raise ValueError
-    elif num == 0:
-        return 1
-    else:
-        return num * cal_factorial (num - 1) 
+#Write a function to check weather a string is a palindrome.
+def string_palindrome(s):
+    normalized_str = ''.join(char.lower() for char in s if char.isalnum())
+    return normalized_str == normalized_str [::-1]
+   
 
-num = 160
-result = cal_factorial(num)
-print (f"The fecturial of {num} is {result}")
-
-  
+string = "Ahmad is Ahmad"    
+result = string_palindrome(string)
+print(f"The {string} is {result} palindrome")
+#  example 2
+string = "civic"
+result = string_palindrome(string)
+print(f"The {string} is {result} palindrome")

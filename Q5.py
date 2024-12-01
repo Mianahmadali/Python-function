@@ -1,21 +1,13 @@
-#Create a Function that check if a given number is prime.
-def is_prime(n):
-    if n <= 1:
-        return False  
-    if n == 2:
-        return True  
-    if n % 2 == 0:
-        return False  
+#Write a Function to calculate the GcD( Greatest Common Divisor) of two numbers.
+def gcd(a,b):
+    while b != 0:
+        a,b = b, a % b
+         
+    return a
 
-    
-    for i in range(3, int(n**0.5) + 1, 2):
-        if n % i == 0:
-            return False  
-    return True 
+a = 80 
+b = 60
+result = gcd(a,b)  
+print(f"The GCD of {a} and {b} is {result}")
 
 
-number = 60
-if is_prime(number):
-    print(f"{number} is a prime number.")
-else:
-    print(f"{number} is not a prime number.")
